@@ -9,3 +9,4 @@ DerivedData/
 .netrc
 src/docs/build.vscode
 .vscode
+.publish
