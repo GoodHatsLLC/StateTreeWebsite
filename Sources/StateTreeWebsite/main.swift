@@ -5,8 +5,10 @@ try StateTreeWebsite()
   .publish(
     using: [
       .installPlugin(.splash(withClassPrefix: "")),
+      .copyResources(),
       .addMarkdownFiles(),
-      .generateHTML(withTheme: .foundation),
+      .sortItems(by: \.date, order: .descending),
+      .generateHTML(withTheme: .localTheme),
       .generateRSSFeed(including: [.recipes, .links]),
       .generateSiteMap(),
     ]
