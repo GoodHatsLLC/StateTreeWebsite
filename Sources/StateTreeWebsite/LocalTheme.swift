@@ -1,8 +1,8 @@
 import Plot
 import Publish
 
-extension Theme {
-  public static var localTheme: Self {
+extension Theme where Site: LocalThemeWebsite {
+  static var localTheme: Self {
     Theme(
       htmlFactory: LocalThemeHTMLFactory(),
       resourcePaths: [
@@ -14,7 +14,7 @@ extension Theme {
 
 // MARK: - LocalThemeHTMLFactory
 
-private struct LocalThemeHTMLFactory<Site: Website>: HTMLFactory {
+private struct LocalThemeHTMLFactory<Site: LocalThemeWebsite>: HTMLFactory {
   func makeIndexHTML(
     for index: Index,
     context: PublishingContext<Site>
@@ -186,7 +186,10 @@ private struct Wrapper: ComponentContainer {
 
 // MARK: - SiteHeader
 
-private struct SiteHeader<Site: Website>: Component {
+private struct SiteHeader<Site: LocalThemeWebsite>: Component {
+
+  // MARK: Internal
+
   var context: PublishingContext<Site>
   var selectedSelectionID: Site.SectionID?
 
@@ -203,16 +206,26 @@ private struct SiteHeader<Site: Website>: Component {
     }
   }
 
+  // MARK: Private
+
   private var navigation: Component {
     Navigation {
       List(Site.SectionID.allCases) { sectionID in
         let section = context.sections[sectionID]
-
-        return Link(
-          section.title,
-          url: section.path.absoluteString
-        )
-        .class(sectionID == selectedSelectionID ? "selected" : "")
+        switch sectionID.type {
+        case .local:
+          return Link(
+            section.title,
+            url: section.path.absoluteString
+          )
+          .class(sectionID == selectedSelectionID ? "selected" : "")
+        case .url(let url):
+          return Link(
+            section.title,
+            url: url.absoluteString
+          )
+          .class(sectionID == selectedSelectionID ? "selected" : "")
+        }
       }
     }
   }

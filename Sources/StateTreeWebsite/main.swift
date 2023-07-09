@@ -1,5 +1,12 @@
+import Foundation
 import Publish
 import SplashPublishPlugin
+
+private func root(path: String = #file) -> String {
+  var path = path.split(separator: "/")
+  path.removeLast(3)
+  return "/\(path.joined(separator: "/"))"
+}
 
 try StateTreeWebsite()
   .publish(
@@ -9,7 +16,7 @@ try StateTreeWebsite()
       .addMarkdownFiles(),
       .sortItems(by: \.date, order: .descending),
       .generateHTML(withTheme: .localTheme),
-      .generateRSSFeed(including: [.recipes, .links]),
+      .generateRSSFeed(including: [.articles, .updates]),
       .generateSiteMap(),
     ]
   )
