@@ -1,0 +1,98 @@
+html, body {
+  margin: 0;
+  padding: 0;
+}
+*[grid] {
+  box-sizing: border-box;
+  margin: 0 0;
+  padding: 0 0;
+  width: 100%;
+}
+*[grid^="col"] {
+  float: left;
+  overflow: clip;
+  overflow-clip-margin: 0px;
+}
+*[grid^="row"] {
+  overflow: clip;
+  overflow-clip-margin: 0px;
+  width: intrinsic;
+  width: max-content;
+}
+*[grid^="row"]:after {
+  content: "";
+  clear: both;
+  display: table;
+}
+*[grid$=":1"] {
+  width: 8.3333333333vw;
+}
+*[grid$=":2"] {
+  width: 16.6666666667vw;
+}
+*[grid$=":3"] {
+  width: 25vw;
+}
+*[grid$=":4"] {
+  width: 33.3333333333vw;
+}
+*[grid$=":5"] {
+  width: 41.6666666667vw;
+}
+*[grid$=":6"] {
+  width: 50vw;
+}
+*[grid$=":7"] {
+  width: 58.3333333333vw;
+}
+*[grid$=":8"] {
+  width: 66.6666666667vw;
+}
+*[grid$=":9"] {
+  width: 75vw;
+}
+*[grid$=":10"] {
+  width: 83.3333333333vw;
+}
+*[grid$=":11"] {
+  width: 91.6666666667vw;
+}
+*[grid$=":12"] {
+  width: 100vw;
+}
+*[grid^="row:1:"], *[grid^="col:1:"] {
+  margin-left: 8.3333333333vw;
+}
+*[grid^="row:2:"], *[grid^="col:2:"] {
+  margin-left: 16.6666666667vw;
+}
+*[grid^="row:3:"], *[grid^="col:3:"] {
+  margin-left: 25vw;
+}
+*[grid^="row:4:"], *[grid^="col:4:"] {
+  margin-left: 33.3333333333vw;
+}
+*[grid^="row:5:"], *[grid^="col:5:"] {
+  margin-left: 41.6666666667vw;
+}
+*[grid^="row:6:"], *[grid^="col:6:"] {
+  margin-left: 50vw;
+}
+*[grid^="row:7:"], *[grid^="col:7:"] {
+  margin-left: 58.3333333333vw;
+}
+*[grid^="row:8:"], *[grid^="col:8:"] {
+  margin-left: 66.6666666667vw;
+}
+*[grid^="row:9:"], *[grid^="col:9:"] {
+  margin-left: 75vw;
+}
+*[grid^="row:10:"], *[grid^="col:10:"] {
+  margin-left: 83.3333333333vw;
+}
+*[grid^="row:11:"], *[grid^="col:11:"] {
+  margin-left: 91.6666666667vw;
+}
+*[grid^="row:12:"], *[grid^="col:12:"] {
+  margin-left: 100vw;
+}

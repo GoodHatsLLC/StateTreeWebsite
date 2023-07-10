@@ -49,5 +49,5 @@ struct StateTreeWebsite: LocalThemeWebsite {
   var name = "StateTree"
   var description = "State management done right."
   var language: Language { .english }
-  var imagePath: Path? { "Images/StateTree.webp" }
+  var imagePath: Path? { "images/StateTree.webp" }
 }

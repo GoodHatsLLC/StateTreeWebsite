@@ -5,16 +5,26 @@ extension Theme where Site: LocalThemeWebsite {
   static var localTheme: Self {
     Theme(
       htmlFactory: LocalThemeHTMLFactory(),
-      resourcePaths: [
-        "Style/styles.css",
-      ]
+      resourcePaths: []
     )
+  }
+}
+
+extension PublishingContext where Site: LocalThemeWebsite {
+  var stylesheets: [Path] {
+    let folder = try! folder(at: "Resources")
+    let paths = folder.files.recursive.filter { $0.extension == "css" }.map(\.path)
+    let prefix = folder.path
+    return paths.map { path in
+      "\(path.dropFirst(prefix.count))"
+    }.map(Path.init)
   }
 }
 
 // MARK: - LocalThemeHTMLFactory
 
 private struct LocalThemeHTMLFactory<Site: LocalThemeWebsite>: HTMLFactory {
+
   func makeIndexHTML(
     for index: Index,
     context: PublishingContext<Site>
@@ -23,23 +33,25 @@ private struct LocalThemeHTMLFactory<Site: LocalThemeWebsite>: HTMLFactory {
   {
     HTML(
       .lang(context.site.language),
-      .head(for: index, on: context.site),
+      .head(for: index, on: context.site, stylesheetPaths: context.stylesheets),
       .body {
+        GridMarkers()
         SiteHeader(context: context, selectedSelectionID: nil)
-        Wrapper {
+          .row(._08, offset: ._02)
+        Div {
           H1(index.title)
-          Paragraph(context.site.description)
-            .class("description")
-          H2("Latest content")
-          ItemList(
-            items: context.allItems(
-              sortedBy: \.date,
-              order: .descending
-            ),
-            site: context.site
-          )
-        }
-        SiteFooter()
+          Div {
+            H2("Latest content")
+            ItemList(
+              items: context.allItems(
+                sortedBy: \.date,
+                order: .descending
+              ),
+              site: context.site
+            )
+          }
+        }.row(._08, offset: ._02)
+        SiteFooter().row(._08, offset: ._02)
       }
     )
   }
@@ -52,14 +64,16 @@ private struct LocalThemeHTMLFactory<Site: LocalThemeWebsite>: HTMLFactory {
   {
     HTML(
       .lang(context.site.language),
-      .head(for: section, on: context.site),
+      .head(for: section, on: context.site, stylesheetPaths: context.stylesheets),
       .body {
         SiteHeader(context: context, selectedSelectionID: section.id)
-        Wrapper {
+          .row(._08, offset: ._02)
+        Div {
           H1(section.title)
           ItemList(items: section.items, site: context.site)
         }
-        SiteFooter()
+        .row(._08, offset: ._02)
+        SiteFooter().row(._08, offset: ._02)
       }
     )
   }
@@ -72,19 +86,20 @@ private struct LocalThemeHTMLFactory<Site: LocalThemeWebsite>: HTMLFactory {
   {
     HTML(
       .lang(context.site.language),
-      .head(for: item, on: context.site),
+      .head(for: item, on: context.site, stylesheetPaths: context.stylesheets),
       .body(
         .class("item-page"),
         .components {
           SiteHeader(context: context, selectedSelectionID: item.sectionID)
-          Wrapper {
+            .row(._08, offset: ._02)
+          Div {
             Article {
               Div(item.content.body).class("content")
               Span("Tagged with: ")
               ItemTagList(item: item, site: context.site)
             }
-          }
-          SiteFooter()
+          }.row(._08, offset: ._02)
+          SiteFooter().row(._08, offset: ._02)
         }
       )
     )
@@ -98,11 +113,12 @@ private struct LocalThemeHTMLFactory<Site: LocalThemeWebsite>: HTMLFactory {
   {
     HTML(
       .lang(context.site.language),
-      .head(for: page, on: context.site),
+      .head(for: page, on: context.site, stylesheetPaths: context.stylesheets),
       .body {
         SiteHeader(context: context, selectedSelectionID: nil)
-        Wrapper(page.body)
-        SiteFooter()
+          .row(._08, offset: ._02)
+        Div(page.body).row(._08, offset: ._02)
+        SiteFooter().row(._08, offset: ._02)
       }
     )
   }
@@ -115,10 +131,11 @@ private struct LocalThemeHTMLFactory<Site: LocalThemeWebsite>: HTMLFactory {
   {
     HTML(
       .lang(context.site.language),
-      .head(for: page, on: context.site),
+      .head(for: page, on: context.site, stylesheetPaths: context.stylesheets),
       .body {
         SiteHeader(context: context, selectedSelectionID: nil)
-        Wrapper {
+          .row(._08, offset: ._02)
+        Div {
           H1("Browse all tags")
           List(page.tags.sorted()) { tag in
             ListItem {
@@ -130,8 +147,8 @@ private struct LocalThemeHTMLFactory<Site: LocalThemeWebsite>: HTMLFactory {
             .class("tag")
           }
           .class("all-tags")
-        }
-        SiteFooter()
+        }.row(._08, offset: ._02)
+        SiteFooter().row(._08, offset: ._02)
       }
     )
   }
@@ -144,10 +161,11 @@ private struct LocalThemeHTMLFactory<Site: LocalThemeWebsite>: HTMLFactory {
   {
     HTML(
       .lang(context.site.language),
-      .head(for: page, on: context.site),
+      .head(for: page, on: context.site, stylesheetPaths: context.stylesheets),
       .body {
         SiteHeader(context: context, selectedSelectionID: nil)
-        Wrapper {
+          .row(._08, offset: ._02)
+        Row(._08) {
           H1 {
             Text("Tagged with ")
             Span(page.tag.string).class("tag")
@@ -167,20 +185,27 @@ private struct LocalThemeHTMLFactory<Site: LocalThemeWebsite>: HTMLFactory {
             ),
             site: context.site
           )
-        }
-        SiteFooter()
+        }.row(._08, offset: ._02)
+        SiteFooter().row(._08, offset: ._02)
       }
     )
   }
 }
 
-// MARK: - Wrapper
+// MARK: - GridMarkers
 
-private struct Wrapper: ComponentContainer {
-  @ComponentBuilder var content: ContentProvider
-
+private struct GridMarkers: Component {
   var body: Component {
-    Div(content: content).class("wrapper")
+    Row {
+      ComponentGroup {
+        for i in 0 ..< 12 {
+          let n = String(2 + i, radix: 16)
+          Col(._01) {
+            Text("&nbsp;")
+          }.style("background-color: #\(n)\(n)\(n)\(n)\(n)\(n);")
+        }
+      }
+    }
   }
 }
 
@@ -195,15 +220,26 @@ private struct SiteHeader<Site: LocalThemeWebsite>: Component {
 
   var body: Component {
     Header {
-      Wrapper {
-        Link(context.site.name, url: "/")
-          .class("site-name")
-
+      Col(._02) {
+        Link(url: "/") {
+          Image("/images/StateTree.webp")
+        }.id("logo")
+      }
+      Col(._02) {
+        Link(url: "/") {
+          H1("StateTree")
+        }
+        .id("logotype")
+        .row()
+        Paragraph(context.site.description)
+          .row()
+      }
+      Col(._04) {
         if Site.SectionID.allCases.count > 1 {
           navigation
         }
       }
-    }
+    }.row(._08)
   }
 
   // MARK: Private
