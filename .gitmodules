@@ -1,3 +1,0 @@
-[submodule "src/docs/checkouts/statetree"]
-	path = src/docs/checkout/statetree
-	url = git@github.com:GoodHatsLLC/StateTree.git
