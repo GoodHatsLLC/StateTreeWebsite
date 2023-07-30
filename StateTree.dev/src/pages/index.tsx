@@ -13,7 +13,7 @@ function HomepageHeader() {
     <header className={clsx(styles.heroBanner)}>
       <div className="container">
         <h1 className="text-6xl font-mono font-bold">{siteConfig.title}</h1>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="font-serif italic">{siteConfig.tagline}</p>
       </div>
     </header>
   );

@@ -8,7 +8,9 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      'mono': ['Berkeley Mono', ...defaultTheme.fontFamily.mono],
+      'sans': ['Inter', ...defaultTheme.fontFamily.sans],
+      'serif': ['Baskerville', 'Libre Baskerville', ...defaultTheme.fontFamily.serif],
+      'mono': ['Berkeley Mono', 'IBMPlexMono', ...defaultTheme.fontFamily.mono],
     },
     extend: {},
   },
