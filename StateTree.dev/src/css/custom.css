@@ -6,6 +6,40 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "Berkeley Mono";
+  src:
+    url("/static/fonts/BerkeleyMono-Regular.woff2") format("woff2"),
+    url("/static/fonts/BerkeleyMono-Regular.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Berkeley Mono";
+  src:
+    url("/static/fonts/BerkeleyMono-Bold.woff2") format("woff2"),
+    url("/static/fonts/BerkeleyMono-Bold.woff") format("woff");
+  font-weight: bold;
+  font-style: bold;
+}
+@font-face {
+  font-family: "Berkeley Mono";
+  src:
+    url("/static/fonts/BerkeleyMono-Italic.woff2") format("woff2"),
+    url("/static/fonts/BerkeleyMono-Italic.woff") format("woff");
+  font-weight: italic;
+  font-style: italic;
+}
+@font-face {
+  font-family: "Berkeley Mono";
+  src:
+    url("/static/fonts/BerkeleyMono-BoldItalic.woff2") format("woff2"),
+    url("/static/fonts/BerkeleyMono-BoldItalic.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #2e8555;
