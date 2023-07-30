@@ -4,20 +4,13 @@
  */
 
 .heroBanner {
-  padding: 4rem 0;
+  height: 300px;
   text-align: center;
   position: relative;
   overflow: hidden;
-}
-
-@media screen and (max-width: 996px) {
-  .heroBanner {
-    padding: 2rem;
-  }
-}
-
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  background-color: #FCFBF8;
+  background-image: url(/img/statetree.webp);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
 }
