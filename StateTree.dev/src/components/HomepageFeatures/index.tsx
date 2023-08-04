@@ -4,14 +4,12 @@ import styles from './styles.module.css';
 
 type FeatureItem = {
   title: string;
-  Svg: React.ComponentType<React.ComponentProps<'svg'>>;
   description: JSX.Element;
 };
 
 const FeatureList: FeatureItem[] = [
   {
     title: 'Easy to Use',
-    Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
         Modelled on <strong>SwiftUI</strong> and with a near 1:1 concept mapping,
@@ -21,7 +19,6 @@ const FeatureList: FeatureItem[] = [
   },
   {
     title: 'Top Tier Reactivity',
-    Svg: require('@site/static/img/undraw_docusaurus_react.svg').default,
     description: (
       <>
         StateTree frees the best-in-class reactive tooling patterns from UI.
@@ -31,8 +28,7 @@ const FeatureList: FeatureItem[] = [
     ),
   },
   {
-    title: 'Focus on What Matters',
-    Svg: require('@site/static/img/undraw_docusaurus_tree.svg').default,
+    title: 'Model What Matters',
     description: (
       <>
         Write, run, and test your app's <strong>business logic</strong> independent
@@ -47,7 +43,6 @@ function Feature({title, Svg, description}: FeatureItem) {
   return (
     <div className={clsx('col col--4')}>
       <div className="text--center">
-        <Svg className={styles.featureSvg} role="img" />
       </div>
       <div className="text--center padding-horiz--md">
         <h3>{title}</h3>

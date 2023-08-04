@@ -10,7 +10,7 @@ module.exports = {
     fontFamily: {
       'sans': ['Inter', ...defaultTheme.fontFamily.sans],
       'serif': ['Baskerville', 'Libre Baskerville', ...defaultTheme.fontFamily.serif],
-      'mono': ['Berkeley Mono', 'IBMPlexMono', ...defaultTheme.fontFamily.mono],
+      'mono': ['IBMPlexMono', ...defaultTheme.fontFamily.mono],
     },
     extend: {},
   },

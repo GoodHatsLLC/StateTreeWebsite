@@ -69,17 +69,16 @@ const config = {
       }),
     ],
   ],
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       // Replace with your project's social card
-      image: 'img/docusaurus-social-card.jpg',
+      image: 'img/statetree.webp',
       navbar: {
-        title: 'My Site',
+        title: 'StateTree',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'StateTree Logo',
+          src: 'img/statetree.webp',
         },
         items: [
           {
@@ -133,6 +132,11 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
+      },
+      colorMode: {
+        defaultMode: 'light',
+        disableSwitch: true,
+        respectPrefersColorScheme: true,
       },
     }),
 };
