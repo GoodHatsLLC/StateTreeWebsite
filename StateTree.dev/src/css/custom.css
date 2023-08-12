@@ -1,8 +1,7 @@
-/**
- * Any CSS included here will be global. The classic template
- * bundles Infima by default. Infima is a CSS framework designed to
- * work well for content-centric websites.
- */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 
 @font-face {
   font-family: "Inter";
@@ -120,8 +119,8 @@
 /* You can override the default Infima variables here. */
 :root {
 
-  --ifm-color-white: #fff;
-  --ifm-color-black: #000;
+  --ifm-color-white: #ffffff;
+  --ifm-color-black: #000000;
 
   --ifm-color-gray-0: var(--ifm-color-white);
   --ifm-color-gray-100: #f5f6f7;
@@ -135,15 +134,15 @@
   --ifm-color-gray-900: #1c1e21;
 
 
-  --ifm-color-primary-contrast-background:  #fcffff;
-  --ifm-color-primary-lightest:             #cbe8ea;
-  --ifm-color-primary-lighter:              #9fd1d5;
-  --ifm-color-primary-light:                #7bbbc1;
-  --ifm-color-primary:                      #5ba5ac;
-  --ifm-color-primary-dark:                 #327b82;
-  --ifm-color-primary-darker:               #195358;
-  --ifm-color-primary-darkest:              #0b2c2f;
-  --ifm-color-primary-contrast-foreground:  #010505;
+  --ifm-color-primary-contrast-background:  #c8ebff;
+  --ifm-color-primary-lightest:             #a7d4ef;
+  --ifm-color-primary-lighter:              #89bedf;
+  --ifm-color-primary-light:                #70aacf;
+  --ifm-color-primary:                      #5a97bf;
+  --ifm-color-primary-dark:                 #3a769f;
+  --ifm-color-primary-darker:               #265b80;
+  --ifm-color-primary-darkest:              #194260;
+  --ifm-color-primary-contrast-foreground:  #0f2c40;
 
   --ifm-color-secondary-contrast-background:  #fffff2;
   --ifm-color-secondary-lightest:             #f9f8e8;
@@ -186,10 +185,10 @@
   --ifm-color-danger-contrast-foreground:     #6b0000;
 
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  --docusaurus-highlighted-code-line-bg: #00000030;
+  --custom-footer-bg: #5c5f63;
 }
 
-/* For readability concerns, you should choose a lighter palette in dark mode. */
 [data-theme='dark'] {
   --ifm-color-primary-contrast-background:  #edfeff;
   --ifm-color-primary-lightest:             #c7ebef;
@@ -200,5 +199,11 @@
   --ifm-color-primary-darker:               #30767c;
   --ifm-color-primary-darkest:              #1f565b;
   --ifm-color-primary-contrast-foreground:  #13373b;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  --docusaurus-highlighted-code-line-bg: #00000050;
+  --custom-footer-bg: #303236;
+}
+
+
+.footer--dark {
+  background-color: var(--custom-footer-bg);
 }
