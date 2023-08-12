@@ -2,6 +2,9 @@
 @tailwind components;
 @tailwind utilities;
 
+main a {
+   @apply text-red hover:text-red-500 visited:text-red
+}
 
 @font-face {
   font-family: "Inter";
@@ -119,6 +122,9 @@
 /* You can override the default Infima variables here. */
 :root {
 
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+
   --ifm-color-white: #ffffff;
   --ifm-color-black: #000000;
 
@@ -186,7 +192,13 @@
 
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: #00000030;
-  --custom-footer-bg: #5c5f63;
+  --custom-footer-bg: #a4a48d;
+  --ifm-footer-link-hover-color: #b5263f;
+  --ifm-navbar-link-hover-color: #b5263f;
+  --custom-bg: magenta;
+  --ifm-background-surface-color: var(--custom-bg);
+  --ifm-navbar-background-color: var(--custom-bg);
+  --ifm-footer-background-color: var(--custom-bg);
 }
 
 [data-theme='dark'] {
@@ -200,10 +212,51 @@
   --ifm-color-primary-darkest:              #1f565b;
   --ifm-color-primary-contrast-foreground:  #13373b;
   --docusaurus-highlighted-code-line-bg: #00000050;
-  --custom-footer-bg: #303236;
+  --custom-footer-bg: #58584c;
+  --ifm-footer-link-hover-color: #b5263f;
+  --ifm-navbar-link-hover-color: #b5263f;
+  --custom-bg: magenta;
+  --ifm-background-surface-color: var(--custom-bg);
+  --ifm-navbar-background-color: var(--custom-bg);
+  --ifm-footer-background-color: var(--custom-bg);
 }
 
+html {
+  background-color: var(--custom-bg) !important;
+}
 
 .footer--dark {
   background-color: var(--custom-footer-bg);
+}
+
+.navbar__logo {
+  width: 42px;
+  height: 42px;
+}
+a.navbar__item {
+  text-decoration: none !important;
+/*  color: #1c1e21 !important;*/
+}
+a:hover.navbar__item {
+/*  color: #b5263f !important;*/
+}
+a.navbar__item > svg, a.footer__link-item > svg {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  margin-bottom: 2px;
+}
+a.navbar__brand {
+  font-family: IBMPlexMono, monospace;
+  text-decoration: none !important;
+/*  color: #1c1e21 !important;*/
+}
+a:hover.navbar__brand {
+/*  color: #b5263f !important;*/
+}
+a.footer__link-item {
+/*  color: #1c1e21 !important;*/
+}
+a:hover.footer__link-item {
+/*  color: #b5263f !important;*/
 }
