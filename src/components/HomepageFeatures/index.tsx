@@ -9,7 +9,7 @@ type FeatureItem = {
 
 const FeatureList: FeatureItem[] = [
   {
-    title: 'Easy to Use',
+    title: 'Easy to Learn',
     // Svg: require('@site/static/img/undraw_docusaurus_mountain.svg').default,
     description: (
       <>
@@ -44,13 +44,13 @@ const FeatureList: FeatureItem[] = [
 
 function Feature({title, Svg, description}: FeatureItem) {
   return (
-    <div className={clsx('col col--4')}>
-      <div className="text--center">
+    <div className="flex-1">
+      <div className="">
         {/*<Svg className={styles.featureSvg} role="img" />*/}
       </div>
-      <div className="text--center padding-horiz--md">
-        <h3>{title}</h3>
-        <p>{description}<a href="/test">hi</a></p>
+      <div className="">
+        <h3 className="text-2xl font-serif font-bold">{title}</h3>
+        <p>{description}</p>
       </div>
     </div>
   );
@@ -59,13 +59,11 @@ function Feature({title, Svg, description}: FeatureItem) {
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className={styles.features}>
-      <div className="container">
-        <div className="row">
+        <div className="flex flex-row gap-4 p-4">
           {FeatureList.map((props, idx) => (
             <Feature key={idx} {...props} />
           ))}
         </div>
-      </div>
     </section>
   );
 }
