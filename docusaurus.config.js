@@ -12,6 +12,7 @@ const config = {
   baseUrl: '/',
   organizationName: 'GoodHatsLLC',
   projectName: 'StateTreeWebsite',
+  deploymentBranch: 'gh-pages',
   trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
