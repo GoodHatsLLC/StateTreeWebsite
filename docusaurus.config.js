@@ -1,5 +1,4 @@
 // @ts-check
-// Note: type annotations allow type checking and IDEs autocompletion
 
 const lightCodeTheme = require('prism-react-renderer/themes/github');
 const darkCodeTheme = require('prism-react-renderer/themes/dracula');
@@ -11,31 +10,23 @@ const config = {
   favicon: 'img/favicon.ico',
   url: 'https://statetree.dev',
   baseUrl: '/',
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'GoodHatsLLC', // Usually your GitHub org/user name.
-  projectName: 'StateTreeWebsite', // Usually your repo name.
-
+  organizationName: 'GoodHatsLLC',
+  projectName: 'StateTreeWebsite',
+  trailingSlash: false,
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
-
-  // Even if you don't use internalization, you can use this field to set useful
-  // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-Hans".
   i18n: {
     defaultLocale: 'en',
     locales: ['en'],
   },
   customFields: {
-    description: 'StateTree is a reactive domain modelling library for writing API oriented app domain logic — everything in an app except the UI. It provides the developer tooling and state management you expect from a modern UI framework like SwiftUI, but free from the proprietary and special-purpose APIs which make UI code complicated and hard to test. It includes UI integration shims allowing you to simply and easily write a pure UI layer for a StateTree application.',
+    description: 'StateTree is a reactive domain modelling library for writing API oriented app domain logic.',
   },
   plugins: [
             async function myPlugin(context, options) {
               return {
                 name: "docusaurus-tailwindcss",
                 configurePostCss(postcssOptions) {
-          // Appends TailwindCSS and AutoPrefixer.
                   postcssOptions.plugins.push(require("tailwindcss"));
                   postcssOptions.plugins.push(require("autoprefixer"));
                   return postcssOptions;
@@ -49,12 +40,11 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
              ({
               docs: {
+                path: 'documentation',
                 sidebarPath: require.resolve('./sidebars.js'),
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
               },
               blog: {
                 showReadingTime: true,
-          // editUrl: 'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
               },
               theme: {
                 customCss: require.resolve('./src/css/custom.css'),
@@ -120,7 +110,7 @@ const config = {
         ],
       },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()} Good Hats, LLC.`,
+      copyright: `Copyright © ${new Date().getFullYear()} Unnamed Venture`,
     },
     prism: {
       theme: lightCodeTheme,
