@@ -24,7 +24,7 @@ const config = {
     description: 'StateTree is a reactive domain modelling library for writing API oriented app domain logic.',
   },
   plugins: [
-            async function myPlugin(context, options) {
+            async function tailwindCSSProcessing(context, options) {
               return {
                 name: "docusaurus-tailwindcss",
                 configurePostCss(postcssOptions) {
@@ -55,7 +55,6 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
   ({
-      // Replace with your project's social card
     image: 'img/statetree.webp',
     navbar: {
       title: 'StateTree',
