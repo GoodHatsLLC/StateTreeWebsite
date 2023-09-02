@@ -40,7 +40,6 @@ const config = {
       /** @type {import('@docusaurus/preset-classic').Options} */
              ({
               docs: {
-                path: 'documentation',
                 sidebarPath: require.resolve('./sidebars.js'),
               },
               blog: {
