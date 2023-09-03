@@ -21,7 +21,7 @@ function HomepageHeader() {
         >
           {siteConfig.title}
         </h1>
-        <p className="inline text-lg font-bold text-white font-serif backdrop-blur-sm bg-red/70 py-1 px-2 m-0 rounded">
+        <p className="inline text-lg font-bold text-white font-serif backdrop-blur-sm bg-red-700/70 py-1 px-2 m-0 rounded">
           Model your domain – not just its UI
         </p>
       </div>

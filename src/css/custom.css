@@ -189,13 +189,14 @@ main a {
 
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: #00000030;
-  --custom-footer-bg: #606770;
+  --bg-primary: var(--ifm-color-gray-100);
+  --bg-secondary: var(--ifm-color-secondary-light);
+  --bg-tertiary: var(--ifm-color-gray-700);
   --ifm-footer-link-hover-color: #fa2f56;
   --ifm-navbar-link-hover-color: #9c0f21;
-  --custom-bg: #f5f6f7;
-  --ifm-background-surface-color: #f5f6f7;
-  --ifm-navbar-background-color: #e4e4cd;
-  --ifm-footer-background-color: #e4e4cd;
+  --ifm-background-surface-color: var(--bg-primary);
+  --ifm-navbar-background-color: var(--bg-secondary);
+  --ifm-footer-background-color: var(--bg-tertiary);
 }
 
 [data-theme="dark"] {
@@ -209,21 +210,22 @@ main a {
   --ifm-color-primary-darkest: #1f565b;
   --ifm-color-primary-contrast-foreground: #13373b;
   --docusaurus-highlighted-code-line-bg: #00000050;
-  --custom-footer-bg: #58584c;
+  --bg-primary: var(--ifm-color-gray-900);
+  --bg-secondary: var(--ifm-color-secondary-darkest);
+  --bg-tertiary: var(--ifm-color-gray-800);
   --ifm-footer-link-hover-color: #b5263f;
   --ifm-navbar-link-hover-color: #b5263f;
-  --custom-bg: magenta;
-  --ifm-background-surface-color: var(--custom-bg);
-  --ifm-navbar-background-color: var(--custom-bg);
-  --ifm-footer-background-color: var(--custom-bg);
+  --ifm-background-surface-color: var(--bg-primary);
+  --ifm-navbar-background-color: var(--bg-secondary);
+  --ifm-footer-background-color: var(--bg-tertiary);
 }
 
 html {
-  background-color: var(--custom-bg) !important;
+  background-color: var(--bg-primary) !important;
 }
 
 .footer--dark {
-  background-color: var(--custom-footer-bg);
+  background-color: var(--bg-tertiary);
 }
 
 .navbar__logo {
