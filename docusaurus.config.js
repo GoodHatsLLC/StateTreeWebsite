@@ -76,7 +76,7 @@ const config = {
             position: "left",
           },
           {
-            to: "/api/documentation",
+            href: "https://docs.statetree.dev/documentation/statetree",
             label: "API Reference",
             position: "left",
           },
@@ -104,7 +104,7 @@ const config = {
             items: [
               {
                 label: "Apple Docs",
-                href: "/api/documentation",
+                href: "https://docs.statetree.dev/documentation/statetree",
               },
             ],
           },
