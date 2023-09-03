@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 main a {
-   @apply text-red hover:text-red-400 visited:text-red
+  @apply text-red hover:text-red-400 visited:text-red;
 }
 
 @font-face {
@@ -121,7 +121,6 @@ main a {
 
 /* You can override the default Infima variables here. */
 :root {
-
   text-decoration-thickness: 1px;
   text-underline-offset: 3px;
 
@@ -139,55 +138,54 @@ main a {
   --ifm-color-gray-800: #444950;
   --ifm-color-gray-900: #1c1e21;
 
-  --ifm-color-primary-contrast-background:  #c8ebff;
-  --ifm-color-primary-lightest:             #a7d4ef;
-  --ifm-color-primary-lighter:              #89bedf;
-  --ifm-color-primary-light:                #70aacf;
-  --ifm-color-primary:                      #5a97bf;
-  --ifm-color-primary-dark:                 #3a769f;
-  --ifm-color-primary-darker:               #265b80;
-  --ifm-color-primary-darkest:              #194260;
-  --ifm-color-primary-contrast-foreground:  #0f2c40;
+  --ifm-color-primary-contrast-background: #c8ebff;
+  --ifm-color-primary-lightest: #a7d4ef;
+  --ifm-color-primary-lighter: #89bedf;
+  --ifm-color-primary-light: #70aacf;
+  --ifm-color-primary: #5a97bf;
+  --ifm-color-primary-dark: #3a769f;
+  --ifm-color-primary-darker: #265b80;
+  --ifm-color-primary-darkest: #194260;
+  --ifm-color-primary-contrast-foreground: #0f2c40;
 
-  --ifm-color-secondary-contrast-background:  #fffff2;
-  --ifm-color-secondary-lightest:             #f9f8e8;
-  --ifm-color-secondary-lighter:              #f2f2dd;
-  --ifm-color-secondary-light:                #e4e4cd;
-  --ifm-color-secondary-dark:                 #d6d6bd;
-  --ifm-color-secondary-darker:               #a4a48d;
-  --ifm-color-secondary-darkest:              #58584c;
-  --ifm-color-secondary-contrast-foreground:  #0a0a09;
+  --ifm-color-secondary-contrast-background: #fffff2;
+  --ifm-color-secondary-lightest: #f9f8e8;
+  --ifm-color-secondary-lighter: #f2f2dd;
+  --ifm-color-secondary-light: #e4e4cd;
+  --ifm-color-secondary-dark: #d6d6bd;
+  --ifm-color-secondary-darker: #a4a48d;
+  --ifm-color-secondary-darkest: #58584c;
+  --ifm-color-secondary-contrast-foreground: #0a0a09;
 
+  --ifm-color-success-contrast-background: #fbfffa;
+  --ifm-color-success-lightest: #d3eccd;
+  --ifm-color-success-lighter: #aed8a5;
+  --ifm-color-success-light: #8ec584;
+  --ifm-color-success: #71b266;
+  --ifm-color-success-dark: #478b3d;
+  --ifm-color-success-darker: #2b6423;
+  --ifm-color-success-darkest: #173e13;
+  --ifm-color-success-contrast-foreground: #081706;
 
-  --ifm-color-success-contrast-background:    #fbfffa;
-  --ifm-color-success-lightest:               #d3eccd;
-  --ifm-color-success-lighter:                #aed8a5;
-  --ifm-color-success-light:                  #8ec584;
-  --ifm-color-success:                        #71b266;
-  --ifm-color-success-dark:                   #478b3d;
-  --ifm-color-success-darker:                 #2b6423;
-  --ifm-color-success-darkest:                #173e13;
-  --ifm-color-success-contrast-foreground:    #081706;
+  --ifm-color-warning-contrast-background: #ffedd6;
+  --ifm-color-warning-lightest: #efc284;
+  --ifm-color-warning-lighter: #df9c3c;
+  --ifm-color-warning-light: #cf7d05;
+  --ifm-color-warning: #be7300;
+  --ifm-color-warning-dark: #9e6200;
+  --ifm-color-warning-darker: #7e4f00;
+  --ifm-color-warning-darkest: #5d3b00;
+  --ifm-color-warning-contrast-foreground: #3d2700;
 
-  --ifm-color-warning-contrast-background:    #ffedd6;
-  --ifm-color-warning-lightest:               #efc284;
-  --ifm-color-warning-lighter:                #df9c3c;
-  --ifm-color-warning-light:                  #cf7d05;
-  --ifm-color-warning:                        #be7300;
-  --ifm-color-warning-dark:                   #9e6200;
-  --ifm-color-warning-darker:                 #7e4f00;
-  --ifm-color-warning-darkest:                #5d3b00;
-  --ifm-color-warning-contrast-foreground:    #3d2700;
-
-  --ifm-color-danger-contrast-background:     #ffdbdc;
-  --ifm-color-danger-lightest:                #fda8a9;
-  --ifm-color-danger-lighter:                 #fb7678;
-  --ifm-color-danger-light:                   #f74a4d;
-  --ifm-color-danger:                         #f32023;
-  --ifm-color-danger-dark:                    #e40003;
-  --ifm-color-danger-darker:                  #8d0001;
-  --ifm-color-danger-darkest:                 #450000;
-  --ifm-color-danger-contrast-foreground:     #350000;
+  --ifm-color-danger-contrast-background: #ffdbdc;
+  --ifm-color-danger-lightest: #fda8a9;
+  --ifm-color-danger-lighter: #fb7678;
+  --ifm-color-danger-light: #f74a4d;
+  --ifm-color-danger: #f32023;
+  --ifm-color-danger-dark: #e40003;
+  --ifm-color-danger-darker: #8d0001;
+  --ifm-color-danger-darkest: #450000;
+  --ifm-color-danger-contrast-foreground: #350000;
 
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: #00000030;
@@ -200,16 +198,16 @@ main a {
   --ifm-footer-background-color: #e4e4cd;
 }
 
-[data-theme='dark'] {
-  --ifm-color-primary-contrast-background:  #edfeff;
-  --ifm-color-primary-lightest:             #c7ebef;
-  --ifm-color-primary-lighter:              #a5d9de;
-  --ifm-color-primary-light:                #88c8ce;
-  --ifm-color-primary:                      #6db7be;
-  --ifm-color-primary-dark:                 #48969d;
-  --ifm-color-primary-darker:               #30767c;
-  --ifm-color-primary-darkest:              #1f565b;
-  --ifm-color-primary-contrast-foreground:  #13373b;
+[data-theme="dark"] {
+  --ifm-color-primary-contrast-background: #edfeff;
+  --ifm-color-primary-lightest: #c7ebef;
+  --ifm-color-primary-lighter: #a5d9de;
+  --ifm-color-primary-light: #88c8ce;
+  --ifm-color-primary: #6db7be;
+  --ifm-color-primary-dark: #48969d;
+  --ifm-color-primary-darker: #30767c;
+  --ifm-color-primary-darkest: #1f565b;
+  --ifm-color-primary-contrast-foreground: #13373b;
   --docusaurus-highlighted-code-line-bg: #00000050;
   --custom-footer-bg: #58584c;
   --ifm-footer-link-hover-color: #b5263f;
@@ -232,7 +230,8 @@ html {
   width: 42px;
   height: 42px;
 }
-a.navbar__item > svg, a.footer__link-item > svg {
+a.navbar__item > svg,
+a.footer__link-item > svg {
   display: inline-block;
   width: 14px;
   height: 14px;
