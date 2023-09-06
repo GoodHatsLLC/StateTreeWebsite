@@ -11,7 +11,7 @@ const FeatureList: FeatureItem[] = [
     title: "Intuitive",
     description: (
       <>
-        StateTree makes the <a href="#">standard</a> declarative coding style <strong>more powerful</strong>.
+        StateTree makes the standard declarative coding style <strong>more powerful</strong>.
         It doesn't discard make you discard it. <strong>There's no Redux here</strong>.
       </>
     ),
@@ -30,7 +30,6 @@ const FeatureList: FeatureItem[] = [
     description: (
       <>
         <p>The toughest testing problems are solved upfront. <strong>Side effects</strong>, <strong>dependencies</strong>, and <strong>lifecycles</strong> are easy to manage and deterministic to mock.</p>
-        <p>The toughest testing problems are solved upfront. <strong>Side effects</strong>, <strong>dependencies</strong>, and <strong>lifecycles</strong> are easy to manage and deterministic to mock.</p>
       </>
     ),
   },
@@ -44,6 +43,7 @@ function Feature({ title, description }: FeatureItem) {
     </div>
   );
 }
+
 export default function HomepageFeatures(): JSX.Element {
   return (
     <section className="m-auto flex flex-1 flex-row flex-wrap items-start content-center md:p-2 lg:p-8 max-w-7xl">
