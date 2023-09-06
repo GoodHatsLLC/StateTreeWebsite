@@ -4,7 +4,6 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 const CUSTOM = {
   color: {
-
     "gray:": {
       100: "#f5f6f7",
       200: "#ebedf0",
@@ -143,10 +142,10 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     screens: {
-      'sm': '576px',
-      'md': '800px',
-      'lg': '996px',
-      'xl': '1440px',
+      sm: "576px",
+      md: "800px",
+      lg: "996px",
+      xl: "1440px",
     },
     fontFamily: {
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
@@ -183,7 +182,7 @@ module.exports = {
     aspectRatio: false,
   },
   plugins: [
-    require('@tailwindcss/aspect-ratio'),
+    require("@tailwindcss/aspect-ratio"),
     // ...
   ],
 };
