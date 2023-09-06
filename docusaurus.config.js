@@ -118,7 +118,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} Unnamed Venture`,
+        copyright: `Copyright © ${new Date().getFullYear()} Good Hats, LLC`,
       },
       prism: {
         theme: lightCodeTheme,
