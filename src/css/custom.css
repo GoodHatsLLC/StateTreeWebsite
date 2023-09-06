@@ -1,10 +1,6 @@
-@tailwind base;
+/*@tailwind base;*/
 @tailwind components;
 @tailwind utilities;
-
-main a {
-  @apply text-red hover:text-red-400 visited:text-red;
-}
 
 @font-face {
   font-family: "Inter";
@@ -186,17 +182,14 @@ main a {
   --ifm-color-danger-darker: #8d0001;
   --ifm-color-danger-darkest: #450000;
   --ifm-color-danger-contrast-foreground: #350000;
-
-  --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: #00000030;
-  --bg-primary: var(--ifm-color-gray-100);
-  --bg-secondary: var(--ifm-color-secondary-light);
-  --bg-tertiary: var(--ifm-color-gray-700);
-  --ifm-footer-link-hover-color: #fa2f56;
-  --ifm-navbar-link-hover-color: #9c0f21;
-  --ifm-background-surface-color: var(--bg-primary);
-  --ifm-navbar-background-color: var(--bg-secondary);
-  --ifm-footer-background-color: var(--bg-tertiary);
+}
+.navbar__logo {
+  width: 42px;
+  height: 42px;
+}
+a.navbar__brand {
+  font-family: IBMPlexMono, monospace;
 }
 
 [data-theme="dark"] {
@@ -210,35 +203,4 @@ main a {
   --ifm-color-primary-darkest: #1f565b;
   --ifm-color-primary-contrast-foreground: #13373b;
   --docusaurus-highlighted-code-line-bg: #00000050;
-  --bg-primary: var(--ifm-color-gray-900);
-  --bg-secondary: var(--ifm-color-secondary-darkest);
-  --bg-tertiary: var(--ifm-color-gray-800);
-  --ifm-footer-link-hover-color: #b5263f;
-  --ifm-navbar-link-hover-color: #b5263f;
-  --ifm-background-surface-color: var(--bg-primary);
-  --ifm-navbar-background-color: var(--bg-secondary);
-  --ifm-footer-background-color: var(--bg-tertiary);
-}
-
-html {
-  background-color: var(--bg-primary) !important;
-}
-
-.footer--dark {
-  background-color: var(--bg-tertiary);
-}
-
-.navbar__logo {
-  width: 42px;
-  height: 42px;
-}
-a.navbar__item > svg,
-a.footer__link-item > svg {
-  display: inline-block;
-  width: 14px;
-  height: 14px;
-  margin-bottom: 2px;
-}
-a.navbar__brand {
-  font-family: IBMPlexMono, monospace;
 }

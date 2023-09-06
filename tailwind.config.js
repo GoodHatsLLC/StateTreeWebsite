@@ -4,6 +4,7 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 
 const CUSTOM = {
   color: {
+
     "gray:": {
       100: "#f5f6f7",
       200: "#ebedf0",
@@ -22,11 +23,23 @@ const CUSTOM = {
       300: "#89bedf",
       400: "#70aacf",
       500: "#5a97bf",
+      DEFAULT: "#5a97bf",
       600: "#3a769f",
-      DEFAULT: "#3a769f",
       700: "#265b80",
       800: "#194260",
       900: "#0f2c40",
+    },
+    bluedark: {
+      100: "#edfeff",
+      200: "#c7ebef",
+      300: "#a5d9de",
+      400: "#88c8ce",
+      500: "#6db7be",
+      DEFAULT: "#6db7be",
+      600: "#48969d",
+      700: "#30767c",
+      800: "#1f565b",
+      900: "#13373b",
     },
     cyan: {
       100: "#a3fff4",
@@ -129,6 +142,12 @@ const CUSTOM = {
 module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
+    screens: {
+      'sm': '576px',
+      'md': '800px',
+      'lg': '996px',
+      'xl': '1440px',
+    },
     fontFamily: {
       sans: ["Inter", ...defaultTheme.fontFamily.sans],
       serif: ["Baskerville", "Libre Baskerville", ...defaultTheme.fontFamily.serif],
@@ -142,6 +161,7 @@ module.exports = {
       black: "#000000",
       grey: CUSTOM.color.gray,
       blue: CUSTOM.color.blue,
+      bluedark: CUSTOM.color.bluedark,
       cyan: CUSTOM.color.cyan,
       indigo: CUSTOM.color.purple,
       purple: CUSTOM.color.purple,
@@ -159,5 +179,11 @@ module.exports = {
       danger: CUSTOM.color.red,
     },
   },
-  plugins: [],
+  corePlugins: {
+    aspectRatio: false,
+  },
+  plugins: [
+    require('@tailwindcss/aspect-ratio'),
+    // ...
+  ],
 };

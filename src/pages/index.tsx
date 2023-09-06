@@ -5,13 +5,12 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import Layout from "@theme/Layout";
 import HomepageFeatures from "@site/src/components/HomepageFeatures";
 import treeLogo from "@site/static/img/statetree.webp";
-import styles from "./index.module.css";
 
 function HomepageHeader() {
   const { siteConfig } = useDocusaurusContext();
   return (
     <header
-      className="h-4 bg-no-repeat bg-origin-content p-3 bg-contain bg-center grid grid-rows-5 grid-flow-col gap-0 h-60 justify-center items-stretch"
+      className="min-w-max bg-no-repeat bg-origin-content p-3 bg-contain bg-center grid grid-rows-5 grid-flow-col gap-0 h-60 justify-center items-stretch"
       style={{ backgroundImage: `url(${treeLogo}` }}
     >
       <div className="row-start-4 row-span-2 text-center">
@@ -21,7 +20,7 @@ function HomepageHeader() {
         >
           {siteConfig.title}
         </h1>
-        <p className="inline text-lg font-bold text-white font-serif backdrop-blur-sm bg-red-700/70 py-1 px-2 m-0 rounded">
+        <p className="inline text-lg font-bold text-white font-serif backdrop-blur-sm bg-blue-700/70 dark:bg-blue-500/70 py-1 px-2 m-0 rounded">
           Model your domain – not just its UI
         </p>
       </div>
