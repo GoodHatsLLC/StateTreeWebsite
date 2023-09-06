@@ -11,3 +11,10 @@ repos:
     rev: v0.1.1
     hooks:
       - id: swift_lintfix
+  - repo: local
+    hooks:
+    -   id: web-lint
+        name: Lint web code
+        entry: npm run lint
+        language: script
+        files: \.[js|ts|jsx|tsx|json|mdx]$
